@@ -1,18 +1,100 @@
-/* 使整个网页使用背景图片 */
+/* 通用样式 */
 body {
     background-image: url('images/background.jpg'); /* 背景图片路径 */
-    background-size: cover;  /* 图片自动调整为屏幕大小 */
-    background-position: center center; /* 图片居中 */
-    background-attachment: fixed; /* 背景固定在页面 */
-    background-repeat: no-repeat; /* 防止背景图重复 */
-    font-family: Arial, sans-serif;
-    color: #fff;  /* 设置文字颜色为白色，确保能看清楚 */
+    background-size: cover;  /* 图片自适应窗口大小 */
+    background-position: center center; /* 图片居中显示 */
+    background-attachment: fixed; /* 背景固定不滚动 */
+    background-repeat: no-repeat; /* 防止背景重复 */
+    font-family: Arial, sans-serif; /* 设置全局字体 */
+    color: #fff;  /* 设置文字颜色为白色，确保对比度清晰 */
     margin: 0;
     padding: 0;
 }
 
-/* 如果需要其他页面元素透明背景 */
-header, footer, main {
-    background: rgba(0, 0, 0, 0.5);  /* 添加一个半透明的黑色背景，让文字更容易看清 */
+/* 头部导航栏样式 */
+header {
+    background: rgba(0, 0, 0, 0.8); /* 半透明背景，让文字清晰可见 */
     padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* 主体内容样式 */
+main {
+    margin-top: 100px; /* 给头部留出空间 */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3 {
+    color: #ffcc00; /* 黄色标题颜色 */
+}
+
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 页脚样式 */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* 按钮样式 */
+button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffaa00;
+}
+
+/* 链接样式 */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
 }
